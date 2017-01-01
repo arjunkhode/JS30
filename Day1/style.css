@@ -1,0 +1,28 @@
+html{
+	
+margin:0;
+padding:0;
+color:white;
+font:20px Helvetica,sans-serif;
+background:url(http://i.imgur.com/5Cd36I1.png);
+}
+
+.drums{
+	height: 100vh;
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.item{
+	flex:0 1 50px;
+	height:50px;
+	background: rgba(255,255,255,0.2);
+	text-align: center;
+	line-height: 50px;
+	border:4px solid white;
+}
+
+.play{
+	box-shadow: 0 0 15px 5px white;
+}
