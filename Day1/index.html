@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Drums</title>
 <link rel="stylesheet" href="style.css"/>
-<script src="main.js"></script>
 </head>
 
 <body>
@@ -68,7 +67,23 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
+<script>
+	window.addEventListener('keydown',function(e){
+		const audio=document.querySelector(`audio[data-key="${e.keyCode}"]`);
+		const item=document.querySelector(`.item[data-key="${e.keyCode}"]`);
+		if(!audio) return; // stop the function from running if invalid keypress
+		item.classList.add('play');
+		audio.currentTime = 0;
+		audio.play();
 
+		const items=document.querySelectorAll('.item');
+		items.forEach(item => item.addEventListener('transitionend',function(e){
+			if(e.propertyName!=='transform') return; // skip if anything other than transform
+			console.log("yo");
+			this.classList.remove('play');
+		}))
+	});
+</script>
 </body>
 
 </html>

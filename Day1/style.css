@@ -21,10 +21,11 @@ background:url(http://i.imgur.com/5Cd36I1.png);
 	text-align: center;
 	border:4px solid black;
 	transition:all 0.07s;
+	cursor: initial;
 }
 
 .item .label{
-	font-size: 18px;
+	font-size: 15px;
 	display: block;
 	color:goldenrod;
 }
