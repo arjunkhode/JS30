@@ -29,7 +29,9 @@
 		border: 20px solid white;
 		height:30rem;
 		width:30rem;
-		box-shadow: 0 0 0 5px rgba(0,0,0,0.3),
+		box-shadow: 0 0 0 5px rgba(0,0,0,0.1),
+		0 0 4px black,
+		inset 0 0 8px black,
 		inset 0 0 0 5px rgba(0,0,0,0.3);
 		padding: 2rem;
 	}
@@ -40,22 +42,47 @@
 		height: 100%;
 	}
 
-	.hand{
-		width:50%;
-		height: 6px;
-		transform: translateY(-3px);
+	.hour-hand{
+		width:30%;
+		height:6px;
+		background-color: white;
 		position: absolute;
-		background-color: black;
-		top: 50%;
+		top:50%;
+		margin-left: 20%;
+		transform-origin: 100%;
+		transform: rotate(90deg);
 	}
+
+	.minute-hand{
+		width:40%;
+		height:6px;
+		background-color: grey;
+		position: absolute;
+		top:50%;
+		margin-left: 10%;
+		transform-origin: 100%;
+		transform: rotate(90deg);
+	}
+
+	.second-hand{
+		width:50%;
+		height:6px;
+		background-color: black;
+		position: absolute;
+		top:50%;
+		transform-origin: 100%;
+		transform: rotate(90deg);
+	}
+
+
 </style>
 </head>
 <body>
 <div class="clock">
 	<div class="clock-face">
-		<div class="hand hour-hand"></div>
-		<div class="hand minute-hand"></div>
-		<div class="hand second-hand"></div>
+		<div class="second-hand"></div>
+		<div class="minute-hand"></div>
+		<div class="hour-hand"></div>
 	</div>
 </div>
 </body>
