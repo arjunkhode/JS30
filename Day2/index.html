@@ -29,7 +29,9 @@
 		border: 20px solid white;
 		height:30rem;
 		width:30rem;
-		box-shadow: 0 0 0 5px rgba(0,0,0,0.3),
+		box-shadow: 0 0 0 5px rgba(0,0,0,0.1),
+		0 0 4px black,
+		inset 0 0 8px black,
 		inset 0 0 0 5px rgba(0,0,0,0.3);
 		padding: 2rem;
 	}
@@ -40,23 +42,94 @@
 		height: 100%;
 	}
 
-	.hand{
-		width:50%;
-		height: 6px;
-		transform: translateY(-3px);
+	.hour-hand{
+		width:33%;
+		height:6px;
+		background-color: white;
 		position: absolute;
-		background-color: black;
-		top: 50%;
+		top:50%;
+		margin-left: 20%;
+		transform-origin: 95%;
+		transform: rotate(90deg);
+		transition: all 0.05s;
+		transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
 	}
+
+	.minute-hand{
+		width:43%;
+		height:6px;
+		background-color: grey;
+		position: absolute;
+		top:50%;
+		margin-left: 10%;
+		transform-origin: 95%;
+		transform: rotate(90deg);
+		transition: all 0.05s;
+		transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
+	}
+
+	.second-hand{
+		width:53%;
+		height:6px;
+		background-color: black;
+		position: absolute;
+		top:50%;
+		transform-origin: 95%;
+		transform: rotate(90deg);
+		transition: all 0.05s;
+		transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
+	}
+
+	.fast
+	{
+		transition: all 0s;
+	}
+
+
 </style>
 </head>
 <body>
 <div class="clock">
 	<div class="clock-face">
-		<div class="hand hour-hand"></div>
-		<div class="hand minute-hand"></div>
-		<div class="hand second-hand"></div>
+		<div class="second-hand"></div>
+		<div class="minute-hand"></div>
+		<div class="hour-hand"></div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+const secondHand=document.querySelector('.second-hand');
+const minuteHand=document.querySelector('.minute-hand');
+const hourHand=document.querySelector('.hour-hand');
+	function setDate(){
+		const now=new Date();
+		const seconds= now.getSeconds();
+		const minutes=now.getMinutes();
+		const hours=now.getHours();
+		const secondsDegrees = ((seconds/60)*360)+90;
+		const minutesDegrees = ((minutes/60)*360)+90;
+		const hoursDegrees = ((hours/12)*360)+90;
+		secondHand.style.transform=`rotate(${secondsDegrees}deg)`;
+		if(seconds===0) secondHand.classList.add('fast');
+		console.log("added");
+		if(seconds===1) secondHand.classList.remove('fast');
+		console.log("removed");
+
+		minuteHand.style.transform=`rotate(${minutesDegrees}deg)`;
+		if(minutes===0) minuteHand.classList.add('fast');
+		console.log("added");
+		if(minutes===1) minuteHand.classList.remove('fast');
+		console.log("removed");
+
+		hourHand.style.transform=`rotate(${hoursDegrees}deg)`;
+		if(hours===0) hourHand.classList.add('fast');
+		console.log("added");
+		if(hours===1) hourHand.classList.remove('fast');
+		console.log("removed");
+	}
+	setInterval(setDate, 1000);
+</script>
+
 </body>
 </html>
