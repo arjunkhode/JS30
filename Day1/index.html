@@ -79,7 +79,6 @@
 		const items=document.querySelectorAll('.item');
 		items.forEach(item => item.addEventListener('transitionend',function(e){
 			if(e.propertyName!=='transform') return; // skip if anything other than transform
-			console.log("yo");
 			this.classList.remove('play');
 		}))
 	});
