@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Clock</title>
+<meta name="author" content="Arjun Khode">
+<style type="text/css">
+	html{
+		padding:0;
+		margin:0;
+		background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+        background-size: cover;
+        font-size: 10px;
+        text-align: center;
+	}
+
+	body{
+		display: flex;
+		height: 100vh;
+		flex-flow: row nowrap;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.clock{
+		position: relative;
+		border-radius: 50%;
+		margin:0 auto;
+		border: 20px solid white;
+		height:30rem;
+		width:30rem;
+		box-shadow: 0 0 0 5px rgba(0,0,0,0.3),
+		inset 0 0 0 5px rgba(0,0,0,0.3);
+		padding: 2rem;
+	}
+
+	.clock-face{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.hand{
+		width:50%;
+		height: 6px;
+		transform: translateY(-3px);
+		position: absolute;
+		background-color: black;
+		top: 50%;
+	}
+</style>
+</head>
+<body>
+<div class="clock">
+	<div class="clock-face">
+		<div class="hand hour-hand"></div>
+		<div class="hand minute-hand"></div>
+		<div class="hand second-hand"></div>
+	</div>
+</div>
+</body>
+</html>
