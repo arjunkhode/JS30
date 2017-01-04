@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Arjun Khode">
+<title>CSS Image Editor</title>
+
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-color: #193549;
+	text-align: center;
+	font-family: "helvetica neue", sans-serif;
+	font-weight: 100;
+	font-size: 50px;
+	color: white;
+}
+
+img{
+	margin-top: 20px;
+}
+
+input{
+	width: 100px;
+}
+
+h2{margin-top: 20px;}
+
+</style>
+
+</head>
+<body>
+	<h2>Update CSS variables with JS</h2> <br>
+	<label for="spacing">Spacing:</label>
+	<input type="range" min="10" max="200" name="spacing" value="10" data-sizing="px"> 
+
+	<label for="blur">Blur:</label>
+	<input type="range" min="0" max="100" name="blur" value="10" data-sizing="px"> 
+	
+	<label for="base">Base color</label>
+	<input type="color" name="base" value="ffc600"> 
+
+	<img src="./photo.jpg" alt="the image" width="800">
+
+</body>
+</html>
