@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		*{margin:0;}
+		body{
+			height:200vh;
+		}
+		.panel, .second{
+			width:100vw;
+		}
+		.panel{background:lightcoral;}
+		.second{background:blue; color:white; display:none;}
+
+		.addit{display:block;}
+		.removeit{display:none;}
+
+		.fix-state{
+			position: fixed;
+		}
+	</style>
+</head>
+
+<body>
+
+<nav class="panel">
+Hello
+</nav>
+
+<nav class="second">
+Hi there, how are you?
+</nav>
+
+<script>
+const panel=document.querySelector('.panel');
+const second=document.querySelector('.second');
+function test(){
+	if(document.body.scrollTop!==0){
+		panel.classList.add('removeit');
+		second.classList.add('addit','fix-state');
+	}
+	if(document.body.scrollTop==0){
+		panel.classList.remove('removeit');
+		second.classList.remove('addit');
+	}
+}
+
+document.addEventListener('scroll',test);
+</script>
+
+</body>
+</html>
