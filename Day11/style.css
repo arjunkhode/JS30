@@ -1,0 +1,54 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.player{
+	max-width: 750px;
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.panel
+{
+	display: flex;
+	flex:1;
+	width:100%;
+	position: absolute;
+	bottom:0;
+	transition:all 0.3s;
+}
+
+.panel-original{
+	display: block;
+	flex:1;
+	background:red;
+}
+
+.panel-extra
+{
+	display:none;
+	background:blue;
+	width:100%;
+	flex:1;
+	margin:0;
+}
+
+.player:hover .panel-original{
+	transform: translateY(-50%);
+}
+
+.player:hover .panel-extra{
+	display:flex;
+	flex:1;
+	position: absolute;
+	bottom:0;
+}
