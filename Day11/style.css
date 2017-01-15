@@ -31,15 +31,17 @@ body{
 	order:2;
 	flex:1;
 	width:100%;
-	background:navy;
+	background: transparent;
 	position: absolute;
 	bottom:0;
-	transform: translateY(25px);
+	transform: translateY(45px);
 	transition: all 0.3s;
 }
 
+.controls > * {margin:0;}
+
 .player:hover .controls{
-	transform:translateY(0);
+	transform:translateY(5px);
 }
 
 .player:hover .controls1{
@@ -61,7 +63,28 @@ body{
 }
 
 .controls2{
-	background: deepskyblue;
-	height:25px;
+	display: flex;
+	background: transparent;
+	height:45px;
 	width:100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+input[type=range]:focus{
+	outline: none;
+}
+
+.player_slider
+{
+	height:30px;
+}
+
+.player_button
+{
+	color:white;
+	height:30px;
+	background: transparent;
+	outline: none;
+	border: none;
 }

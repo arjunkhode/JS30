@@ -13,7 +13,13 @@
 <video class="thevideo" src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164"></video>
 	<nav class="controls">
 	<div class="controls1"><div class="progress"></div></div>
-	<div class="controls2"></div>
+	<div class="controls2">
+		<button class="player_button playPause" title="Play/Pause">►</button>
+		<input type="range" name="volume-slider" title="Adjust Volume" class="player_slider" min="0" max="1" step="0.1" value="1">
+		<input type="range" name="rate-slider" title="Adjust Speed" class="player_slider" min="0.5" max="2" step="0.1" value="1">
+	    <button data-skip="-10" class="player_button">« 10s</button>
+       	<button data-skip="25" class="player_button">25s »</button>
+	</div>
 	</nav>
 </div>
 
