@@ -37,6 +37,16 @@ function updateRange(){
 	}
 }
 
+function progressing(){
+	const percent=(video.currentTime/video.duration)*100;
+	progress.style.flexBasis=`${percent}%`;
+}
+
+function scrub(e){
+	const scrubtime=(e.offsetX/controls1.offsetWidth) * video.duration;
+	video.currentTime=scrubtime;
+}
+
 video.addEventListener('click', togglePlay);
 toggle.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
@@ -47,3 +57,8 @@ ranges.forEach(range=>range.addEventListener('change',updateRange));
 ranges.forEach(range=>range.addEventListener('mouseDown',function(){
 	ranges.forEach(range=>range.addEventListener('mouseMove',updateRange));	
 }));
+
+
+video.addEventListener('timeupdate', progressing);
+controls1.addEventListener('click',scrub);
+controls1.addEventListener('mouseMove',scrub);

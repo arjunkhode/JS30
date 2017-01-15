@@ -58,7 +58,7 @@ body{
 
 .progress{
 	flex: 0 1;
-	flex-basis:20%;
+	flex-basis:0%;
 	background:peachpuff;
 }
 
@@ -84,7 +84,7 @@ input[type=range]:focus{
 .player_button
 {
 	color:white;
-	height:30px;
+	height:30px;	
 	line-height: 1;
 	background: transparent;
 	outline: none;
