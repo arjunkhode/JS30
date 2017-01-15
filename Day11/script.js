@@ -54,11 +54,14 @@ video.addEventListener('pause', updateButton);
 skipper.forEach(button => button.addEventListener('click',skipit));
 
 ranges.forEach(range=>range.addEventListener('change',updateRange));
-ranges.forEach(range=>range.addEventListener('mouseDown',function(){
-	ranges.forEach(range=>range.addEventListener('mouseMove',updateRange));	
+ranges.forEach(range=>range.addEventListener('mousedown',function(){
+	ranges.forEach(range=>range.addEventListener('mousemove',updateRange));	
 }));
 
 
 video.addEventListener('timeupdate', progressing);
 controls1.addEventListener('click',scrub);
-controls1.addEventListener('mouseMove',scrub);
+let move=false;
+controls1.addEventListener('mousedown',()=>move=true)
+controls1.addEventListener('mouseup',()=>move=false)
+controls1.addEventListener('mousemove',(e)=> move && scrub(e));
