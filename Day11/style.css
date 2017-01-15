@@ -43,7 +43,7 @@ body{
 }
 
 .player:hover .controls1{
-	height:30px;
+	transform: scaleY(4);
 }
 
 .controls1{
