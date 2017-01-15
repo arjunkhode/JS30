@@ -44,4 +44,6 @@ video.addEventListener('pause', updateButton);
 skipper.forEach(button => button.addEventListener('click',skipit));
 
 ranges.forEach(range=>range.addEventListener('change',updateRange));
-ranges.forEach(range=>range.addEventListener('mouseMove',updateRange));
+ranges.forEach(range=>range.addEventListener('mouseDown',function(){
+	ranges.forEach(range=>range.addEventListener('mouseMove',updateRange));	
+}));
