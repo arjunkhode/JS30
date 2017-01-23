@@ -1,6 +1,6 @@
 This is my vanilla JS 30 day challenge
 
-1.JavaScript Drum Kit
+1.JavaScript Drum Kit \n
 2.CSS + JS Clock
 3.Playing with CSS Variables and JS
 4.Array Cardio Day 1
