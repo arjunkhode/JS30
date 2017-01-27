@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+
+<script>
+
+const speed = document.querySelector('.speed');
+const bar = speed.querySelector('.speed-bar');
+const video = document.querySelector('.flex');
+
+let playback = 1;
+const min=0.4;
+const max=2.5;
+let savedheight=0;
+let event;
+
+speed.addEventListener('mousemove', function(e){
+	event=e;
+	const y = e.pageY - this.offsetTop;
+	const percent = y / this.offsetHeight;
+
+	const ht = Math.round(percent * 100);
+
+	bar.style.height= ht + '%';
+	console.log(`height:${ht}%`);
+
+	playback = percent * (max-min) + min;
+	bar.textContent = playback.toFixed(2) + 'x';
+
+});
+
+
+
+speed.addEventListener('mousedown', function(event){
+	
+	const y = event.pageY - this.offsetTop;
+
+	const percent = y / this.offsetHeight;
+
+	const ht = Math.round(percent * 100);
+
+	savedheight=ht+'%';
+	console.log(savedheight);
+	bar.style.height= ht + '%';
+	
+	playback = percent * (max-min) + min;
+	bar.textContent = playback.toFixed(2) + 'x';
+	video.playbackRate = playback;
+		console.log(playback);	
+		video.play();
+
+})
+
+speed.addEventListener('mouseleave', function(){
+	//go back to original fill height. Reverse engineer playback variable
+	bar.style.height=savedheight;
+	//console.log(savedheight);
+	bar.textContent = playback.toFixed(2) + 'x';
+
+})
+
+video.addEventListener('click',function(){
+	if (video.paused) {
+	  video.play(); 
+	}
+	else { 
+  		video.pause(); 
+	} 
+
+});
+
+</script>
+</body>
+</html>
