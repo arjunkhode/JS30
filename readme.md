@@ -30,6 +30,3 @@ This is my vanilla JS 30 day challenge
 28.Video Speed Controller UI  
 29.Countdown Clock  
 30.Whack A Mole Game  
-
-
--Arjun Khode
