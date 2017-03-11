@@ -1,5 +1,4 @@
-This is my vanilla JS 30 day challenge
-
+Each 'day index' matches with these projects:
 1.JavaScript Drum Kit  
 2.CSS + JS Clock  
 3.Playing with CSS Variables and JS  
