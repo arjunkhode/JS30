@@ -2,7 +2,7 @@
 
 Each 'day index' matches with these projects:
 
-
+![JS30 Challenge](https://github.com/arjunkhode/JS30/blob/master/JS30-image.png)
 
 1. JavaScript Drum Kit  
 2. CSS + JS Clock  
