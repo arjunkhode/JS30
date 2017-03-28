@@ -33,4 +33,3 @@
 29. Countdown Clock  
 30. Whack A Mole Game  
 
-![Quote - coding is an ego feeder and I am an ego addict](https://github.com/arjunkhode/JS30/blob/master/Quote1-AK.png)
